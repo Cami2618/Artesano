@@ -1,0 +1,8 @@
+.navbar-beige {
+  background-color: #f5f0e6 ;
+  color: blue;
+}
+
+.navbar-beige .nav-link:hover {
+  color: #a66a4c; /* Terracota al pasar el mouse */
+}
