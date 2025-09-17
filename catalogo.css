@@ -1,0 +1,60 @@
+html {
+  scroll-behavior: smooth;
+}
+
+.navbar-beige {
+  background-color: #f5f0e6 ;
+  color: #5c4a3d;
+}
+.card {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+}
+.sobre-texto {
+  text-align: justify;
+  font-size: 0.98rem;
+  color: #4e3b2c;
+  line-height: 1.8;
+}
+.sobre-nosotros {
+  background-color: #f5f0e6;
+  border-left: 4px solid #c4a484;
+}
+
+
+.footer-beige {
+  background-color: #f5f0e6 ;
+  color: #5c4a3d;
+  padding: 20px 0;
+}
+/* Sección Destacados */
+.destacados-section {
+  color: #9c8776;
+  padding: 2rem 0;
+}
+/* Título */
+.destacados-section h2 {
+  color: #4e3b2c;
+  font-weight: bold;
+}
+
+/* Botón Añadir al carrito */
+.btn-add-carrito {
+  background-color: #5c4a3d;
+  color: #fff;
+  border: none;
+  padding: 8px 8px;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.btn-add-carrito:hover {
+  background-color: #beb5af;
+  transform: scale(1.03);
+}
+
