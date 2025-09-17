@@ -1,6 +1,8 @@
 html {
   scroll-behavior: smooth;
 }
+
+/* Botones de filtro */
 .filtro-btn {
   border: 2px solid #5c4a3d;
   color: #5c4a3d;
@@ -20,48 +22,35 @@ html {
   .filtro-btn {
     flex: 1 1 100%;
     text-align: center;
+    font-size: 0.85rem;
+    padding: 6px 10px;
   }
 }
 
+/* Navbar y footer */
 .navbar-beige {
-  background-color: #f5f0e6 ;
+  background-color: #f5f0e6;
   color: #5c4a3d;
 }
-.card {
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+.footer-beige {
+  background-color: #f5f0e6;
+  color: #5c4a3d;
+  padding: 20px 0;
 }
 
 .card:hover {
   transform: scale(1.03);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
-.sobre-texto {
-  text-align: justify;
-  font-size: 0.98rem;
-  color: #4e3b2c;
-  line-height: 1.8;
-}
-.sobre-nosotros {
-  background-color: #f5f0e6;
-  border-left: 4px solid #c4a484;
+
+/* Imagen de producto */
+.card-img-top {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
 }
 
-
-.footer-beige {
-  background-color: #f5f0e6 ;
-  color: #5c4a3d;
-  padding: 20px 0;
-}
-/* Sección Destacados */
-.destacados-section {
-  color: #9c8776;
-  padding: 2rem 0;
-}
-/* Título */
-.destacados-section h2 {
-  color: #4e3b2c;
-  font-weight: bold;
-}
 
 /* Botón Añadir al carrito */
 .btn-add-carrito {
@@ -79,3 +68,35 @@ html {
   transform: scale(1.03);
 }
 
+/* Ajustes para móvil */
+@media (max-width: 576px) {
+  .card-img-top {
+    height: auto;
+    object-fit: contain;
+  }
+
+  .card-body h5 {
+    font-size: 1rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .card-body p {
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
+  }
+
+  .form-select {
+    font-size: 0.85rem;
+    padding: 4px 8px;
+  }
+
+  .btn-add-carrito {
+    font-size: 0.85rem;
+    padding: 6px 12px;
+    width: 100%;
+  }
+
+  .card {
+    margin-bottom: 1rem;
+  }
+}
