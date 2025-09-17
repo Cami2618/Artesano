@@ -3,15 +3,16 @@
 <head>
   <meta charset="UTF-8">
   <title>Artesano Curiti</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1"> <!-- importante para responsive -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-   <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css" rel="stylesheet">
   <link rel="stylesheet" href="index.css">
 </head>
 <body>
 <!-- Navbar -->
 <nav class="navbar navbar-expand-lg navbar-light navbar-beige">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">Artesano Curiti</a>
+    <a class="navbar-brand fw-bold" href="#">Artesano Curiti</a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
       <span class="navbar-toggler-icon"></span>
     </button>
@@ -24,19 +25,16 @@
         <li class="nav-item"><a class="nav-link" href="#contacto">Contacto</a></li>
       </ul>
 
-      <!-- Ícono de carrito con enlace a WhatsApp -->
+      <!-- Ícono de carrito -->
       <a href="carrito.html" target="_blank" class="btn position-relative">
         <i class="bi bi-cart3 fs-4 text-dark"></i>
-        <!-- Puedes activar este badge si quieres mostrar cantidad -->
-        <!-- <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">3</span> -->
       </a>
     </div>
   </div>
 </nav>
 
-
-  <!-- Hero -->
-  <section class="hero d-flex align-items-center justify-content-center text-center">
+<!-- Hero -->
+<section class="hero">
   <div class="container">
     <h1 class="display-4 fw-bold">Raíces que Inspiran</h1>
     <p class="lead">Artesanías de Curití que cuentan historias</p>
@@ -44,19 +42,18 @@
   </div>
 </section>
 
-
- <!-- Sección Destacados -->
-< class="container my-5 destacados-section">
+<!-- Sección Destacados -->
+<section class="container my-5 destacados-section">
   <h2 class="text-center mb-4">Destacados</h2>
   <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
 
     <!-- Producto 1 -->
     <div class="col">
       <div class="card h-100">
-        <img src="img/cotizas4.jpg" class="card-img-top" alt="Cotizas">
+        <img src="img/cotizamujer5.jpg" class="card-img-top" alt="Cotizas">
         <div class="card-body text-center">
-          <h5 class="card-title">Cotizas Boyacenses</h5>
-          <p class="card-text">$180.000</p>
+          <h5 class="card-title">Cotizas</h5>
+          <p class="card-text">$27.000</p>
           <select class="form-select form-select-sm mb-2 talla-selector">
             <option value="35">Talla 35</option>
             <option value="36">Talla 36</option>
@@ -67,10 +64,8 @@
           </select>
           <button class="btn btn-add-carrito"
             data-nombre="Cotizas Boyacenses"
-            data-precio="180000"
-            data-img="img/cotizas4.jpg">
-            Añadir al carrito
-          </button>
+            data-precio="000"
+            data-img="img/cotizas4.jpg">Añadir al carrito</button>
         </div>
       </div>
     </div>
@@ -82,15 +77,10 @@
         <div class="card-body text-center">
           <h5 class="card-title">Bolso tejido Curití</h5>
           <p class="card-text">$150.000</p>
-          <select class="form-select form-select-sm mb-2 talla-selector">
-            <option value="Única">Talla Única</option>
-          </select>
           <button class="btn btn-add-carrito"
             data-nombre="Bolso tejido Curití"
             data-precio="150000"
-            data-img="img/bolso1.jpg">
-            Añadir al carrito
-          </button>
+            data-img="img/bolso1.jpg">Añadir al carrito</button>
         </div>
       </div>
     </div>
@@ -98,19 +88,15 @@
     <!-- Producto 3 -->
     <div class="col">
       <div class="card h-100">
-        <img src="img/cotizas2.jpg" class="card-img-top" alt="Sombrero artesanal">
+        <img src="img/sillas.jpg" class="card-img-top" alt="Sillas tejidas a mano">
         <div class="card-body text-center">
-          <h5 class="card-title">Sombrero de fique</h5>
+          <h5 class="card-title">Sillas tejidas a mano</h5>
           <p class="card-text">$95.000</p>
-          <select class="form-select form-select-sm mb-2 talla-selector">
-            <option value="Única">Talla Única</option>
-          </select>
+          
           <button class="btn btn-add-carrito"
-            data-nombre="Sombrero de fique"
+            data-nombre="Sillas tejidas a mano"
             data-precio="95000"
-            data-img="img/cotizas2.jpg">
-            Añadir al carrito
-          </button>
+            data-img="img/sillas.jpg">Añadir al carrito</button>
         </div>
       </div>
     </div>
@@ -118,24 +104,14 @@
     <!-- Producto 4 -->
     <div class="col">
       <div class="card h-100">
-        <img src="img/cotizas1.jpg" class="card-img-top" alt="Zapatos de fique">
+        <img src="img/individuales1.jpg" class="card-img-top" alt="Individuales amarillos">
         <div class="card-body text-center">
-          <h5 class="card-title">Zapatos artesanales</h5>
+          <h5 class="card-title">Individuales</h5>
           <p class="card-text">$120.000</p>
-          <select class="form-select form-select-sm mb-2 talla-selector">
-            <option value="35">Talla 35</option>
-            <option value="36">Talla 36</option>
-            <option value="37">Talla 37</option>
-            <option value="38">Talla 38</option>
-            <option value="39">Talla 39</option>
-            <option value="40">Talla 40</option>
-          </select>
           <button class="btn btn-add-carrito"
-            data-nombre="Zapatos artesanales"
-            data-precio="120000"
-            data-img="img/cotizas1.jpg">
-            Añadir al carrito
-          </button>
+            data-nombre="Individuales amarillos"
+            data-precio="50000"
+            data-img="img/individuales1.jpg">Añadir al carrito</button>
         </div>
       </div>
     </div>
@@ -143,13 +119,11 @@
   </div>
 </section>
 
-
-
-  <!-- Nosotros -->
-  <section class="sobre-nosotros container my-5 py-5 px-4 rounded shadow-sm">
+<!-- Nosotros -->
+<section id="nosotros" class="sobre-nosotros container my-5 py-5 px-4 rounded shadow-sm">
   <h2 class="text-center mb-4 fw-bold">Sobre Nosotros</h2>
   <div class="row justify-content-center">
-    <div class="col-md-10">
+    <div class="col-lg-10">
       <p class="sobre-texto">
         <strong>Arte-sano Emyli</strong> es una empresa fundada en 2015, dedicada a la elaboración de artesanías en fique que promueven la cultura de nuestro país. Con este material desarrollamos productos como alpargatas, baletas, plataformas, individuales, tapetes, monederos y bolsos, entre otros.
       </p>
@@ -160,44 +134,43 @@
   </div>
 </section>
 
-
-
-  <section class="container text-center my-5">
-    <h2 class="title-products mb-4">Nuestros Beneficios</h2>
-    <div class="row justify-content-center">
-      <div class="col-md-3 col-sm-6 mb-4">
-        <div class="card h-100 shadow-sm p-4">
-          <i class="bi bi-box-seam-fill  fs-1 text-dark mb-3"></i>
-          <h5 class="card-title">Envios a todo Colombia</h5>
-          <p class="card-text small">Te lo llevamos hasta la puerta de tu casa.</p>
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-6 mb-4">
-        <div class="card h-100 shadow-sm p-4">
-          <i class="bi bi-shield-check fs-1 text-success mb-3"></i>
-          <h5 class="card-title">Calidad Garantizada</h5>
-          <p class="card-text small">Productos con altos estándares.</p>
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-6 mb-4">
-        <div class="card h-100 shadow-sm p-4">
-          <i class="bi bi-bag-check fs-1 text-warning mb-3"></i>
-          <h5 class="card-title">Variedad de Productos</h5>
-          <p class="card-text small">Encuentra todo en un solo lugar.</p>
-        </div>
-      </div>
-      <div class="col-md-3 col-sm-6 mb-4">
-        <div class="card h-100 shadow-sm p-4">
-          <i class="bi bi-cash-coin fs-1 text-danger mb-3"></i>
-          <h5 class="card-title">Precios Competitivos</h5>
-          <p class="card-text small">Calidad al mejor precio.</p>
-        </div>
+<!-- Beneficios -->
+<section class="container text-center my-5">
+  <h2 class="title-products mb-4">Nuestros Beneficios</h2>
+  <div class="row row-cols-1 row-cols-sm-2 row-cols-md-4 g-4">
+    <div class="col">
+      <div class="card h-100 shadow-sm p-4">
+        <i class="bi bi-box-seam-fill fs-1 text-dark mb-3"></i>
+        <h5 class="card-title">Envios a todo Colombia</h5>
+        <p class="card-text small">Te lo llevamos hasta la puerta de tu casa.</p>
       </div>
     </div>
-  </section>
+    <div class="col">
+      <div class="card h-100 shadow-sm p-4">
+        <i class="bi bi-shield-check fs-1 text-success mb-3"></i>
+        <h5 class="card-title">Calidad Garantizada</h5>
+        <p class="card-text small">Productos con altos estándares.</p>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100 shadow-sm p-4">
+        <i class="bi bi-bag-check fs-1 text-warning mb-3"></i>
+        <h5 class="card-title">Variedad de Productos</h5>
+        <p class="card-text small">Encuentra todo en un solo lugar.</p>
+      </div>
+    </div>
+    <div class="col">
+      <div class="card h-100 shadow-sm p-4">
+        <i class="bi bi-cash-coin fs-1 text-danger mb-3"></i>
+        <h5 class="card-title">Precios Competitivos</h5>
+        <p class="card-text small">Calidad al mejor precio.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-  <!-- Footer -->
-  <footer class="footer-beige text-center p-3">
+<!-- Footer -->
+<footer class="footer-beige text-center p-3">
   <p>&copy; 2025 Hecho con amor | Curití Santander, Colombia</p>
   <div>
     <a href="#" class="text-dark me-3"><i class="bi bi-tiktok fs-5"></i></a>
@@ -207,8 +180,6 @@
 </footer>
 
 <script src="carrito.js"></script>
-
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

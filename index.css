@@ -1,17 +1,35 @@
 .navbar-beige {
-  background-color: #f5f0e6 ;
+  background-color: #f5f0e6;
   color: #5c4a3d;
 }
+.navbar-beige .navbar-brand,
+.navbar-beige .nav-link {
+  color: #5c4a3d !important; /* café */
+  font-weight: 500;
+}
 
+.navbar-beige .nav-link.active,
+.navbar-beige .nav-link:hover {
+  color: #3b2e26 !important; /* café más oscuro al pasar */
+}
+/* Hero */
 .hero {
   background-image: url('img/cotiza.jpg');
   background-repeat: no-repeat;
-  background-size: contain; /* muestra la imagen completa sin recorte */
+  background-size: contain;  /* no recorta la imagen */
   background-position: center;
-  height: 40vh;
+  min-height: 40vh;
   color: #5c4a3d;
   padding: 40px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-top: 10px;
+  background-color: rgba(255,255,255,0.5);
+  background-blend-mode: lighten;
 }
+
 .hero .container {
   animation: fadeIn 1.2s ease-in-out;
 }
@@ -20,9 +38,11 @@
   from { opacity: 0; transform: translateY(20px); }
   to { opacity: 1; transform: translateY(0); }
 }
+
 .hero h1, .hero p {
   text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
 }
+
 .hero .btn {
   border: 2px solid #5c4a3d;
   color: #5c4a3d;
@@ -34,12 +54,16 @@
 }
 
 .hero .btn:hover {
-  background-color: #5c4a3d; /* café al pasar el mouse */
-  color: #fff; /* texto blanco encima */
+  background-color: #5c4a3d;
+  color: #fff;
 }
+
+/* Cards */
 .card-img-top {
-  height: 200px;
-  object-fit: cover;
+  height: 280px;       /* 🔹 todas las imágenes tendrán la misma altura */
+  width: 100%;         /* que ocupen todo el ancho */
+  object-fit: cover;   /* recorta la imagen sin deformarla */
+  object-position: center; /* centra el recorte */
 }
 
 .card {
@@ -50,29 +74,33 @@
   transform: scale(1.03);
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
+
+/* Sobre Nosotros */
 .sobre-texto {
   text-align: justify;
   font-size: 0.98rem;
   color: #4e3b2c;
   line-height: 1.8;
 }
+
 .sobre-nosotros {
   background-color: #f5f0e6;
   border-left: 4px solid #c4a484;
 }
 
-
+/* Footer */
 .footer-beige {
-  background-color: #f5f0e6 ;
+  background-color: #f5f0e6;
   color: #5c4a3d;
   padding: 20px 0;
 }
+
 /* Sección Destacados */
 .destacados-section {
   color: #9c8776;
   padding: 2rem 0;
 }
-/* Título */
+
 .destacados-section h2 {
   color: #4e3b2c;
   font-weight: bold;
@@ -93,4 +121,3 @@
   background-color: #beb5af;
   transform: scale(1.03);
 }
-
