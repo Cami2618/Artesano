@@ -1,0 +1,115 @@
+body {
+  background-color: #fdfaf6;
+  color: #4e3b2c;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+h2 {
+  color: #4e3b2c;
+  font-weight: bold;
+}
+
+/* Tarjeta artesanal */
+.cart-item {
+  background-color: #fffaf3;
+  border: 1px solid #e4d8c4;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transition: transform 0.3s ease;
+  overflow: hidden;
+}
+
+.cart-item:hover {
+  transform: scale(1.02);
+}
+
+/* Imagen flotante */
+.cart-img {
+  height: 180px;
+  object-fit: contain;
+  background-color: #f5f0e6;
+  padding: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+.cart-item {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 260px;
+}
+
+/* Texto */
+.card-title {
+  font-size: 1rem;
+  color: #4e3b2c;
+  margin-bottom: 0.5rem;
+}
+
+.card-text {
+  font-size: 0.9rem;
+  margin-bottom: 0.3rem;
+}
+
+/* Botón eliminar como etiqueta discreta */
+.btn-eliminar {
+  background-color: transparent;
+  color: #c0392b;
+  border: none;
+  font-size: 0.85rem;
+  padding: 4px 8px;
+}
+
+.btn-eliminar:hover {
+  color: #a93226;
+  background-color: #f5eae6;
+  border-radius: 4px;
+}
+
+/* Botón WhatsApp */
+.btn-success {
+  background-color: #25D366;
+  border: none;
+  font-weight: 500;
+}
+
+.btn-success:hover {
+  background-color: #1ebe5d;
+}
+
+/* Responsive */
+@media (max-width: 576px) {
+  .cart-img {
+    height: auto;
+    max-height: 200px;
+    width: 100%;
+  }
+
+  .btn-success {
+    width: 100%;
+    margin-top: 1rem;
+  }
+}
+.navbar-beige {
+  background-color: #f5f0e6;
+  color: #5c4a3d;
+}
+.navbar-beige .navbar-brand,
+.navbar-beige .nav-link {
+  color: #5c4a3d !important; /* café */
+  font-weight: 500;
+}
+
+.navbar-beige .nav-link.active,
+.navbar-beige .nav-link:hover {
+  color: #3b2e26 !important; /* café más oscuro al pasar */
+}
+/* Footer */
+.footer-beige {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #f5f0e6;
+  color: #5c4a3d;
+  text-align: center;
+  padding: 20px 0;
+}
