@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Tu Carrito</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <!-- Bootstrap Icons -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #f5f0e6;
+      color: #4e3b2c;
+    }
+    .card {
+      border-left: 4px solid #c4a484;
+    }
+    .btn-success {
+      background-color: #25D366;
+      border: none;
+    }
+    .btn-success:hover {
+      background-color: #1ebe5d;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container my-5">
+    <h2 class="text-center mb-4">🛒 Tu Carrito</h2>
+    <div id="carrito-lista" class="row justify-content-center"></div>
+
+    <div class="text-center mt-4">
+      <button onclick="finalizarCompra()" class="btn btn-success px-4">Finalizar compra por WhatsApp</button>
+    </div>
+  </div>
+
+  <!-- Script del carrito -->
+  <script>
+    function mostrarCarrito() {
+      const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+      const contenedor = document.getElementById('carrito-lista');
+
+      if (!contenedor) return;
+
+      if (carrito.length === 0) {
+        contenedor.innerHTML = '<p class="text-center">Tu carrito está vacío.</p>';
+        return;
+      }
+
+      carrito.forEach((item, index) => {
+        const card = document.createElement('div');
+        card.className = 'col-md-6 mb-3';
+        card.innerHTML = `
+          <div class="card shadow-sm">
+            <div class="card-body">
+              <h5 class="card-title">${item.nombre}</h5>
+              <p class="card-text">Talla: ${item.talla}</p>
+              <p class="card-text">Precio: $${item.precio.toLocaleString()}</p>
+              <button class="btn btn-outline-danger btn-sm" onclick="eliminarProducto(${index})">Eliminar</button>
+            </div>
+          </div>
+        `;
+        contenedor.appendChild(card);
+      });
+    }
+
+    function eliminarProducto(index) {
+      let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+      carrito.splice(index, 1);
+      localStorage.setItem('carrito', JSON.stringify(carrito));
+      location.reload();
+    }
+
+    function finalizarCompra() {
+      const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+      if (carrito.length === 0) return;
+
+      let mensaje = "Hola, quiero comprar los siguientes productos:\n\n";
+      let total = 0;
+
+      carrito.forEach(item => {
+        mensaje += `• ${item.nombre} - Talla ${item.talla} - $${item.precio.toLocaleString()}\n`;
+        total += item.precio;
+      });
+
+      mensaje += `\nTotal: $${total.toLocaleString()}\nGracias!`;
+
+      const url = `https://wa.me/573142908122?text=${encodeURIComponent(mensaje)}`;
+      window.open(url, '_blank');
+    }
+
+    mostrarCarrito();
+  </script>
+
+</body>
+</html>
