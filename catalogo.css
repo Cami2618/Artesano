@@ -1,6 +1,27 @@
 html {
   scroll-behavior: smooth;
 }
+.filtro-btn {
+  border: 2px solid #5c4a3d;
+  color: #5c4a3d;
+  background-color: #fffaf3;
+  padding: 8px 16px;
+  border-radius: 4px;
+  font-weight: 500;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.filtro-btn:hover {
+  background-color: #5c4a3d;
+  color: #fff;
+}
+
+@media (max-width: 576px) {
+  .filtro-btn {
+    flex: 1 1 100%;
+    text-align: center;
+  }
+}
 
 .navbar-beige {
   background-color: #f5f0e6 ;
