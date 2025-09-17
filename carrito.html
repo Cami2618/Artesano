@@ -9,28 +9,8 @@
   <link rel="stylesheet" href="carrito.css">
 </head>
 <body>
-<nav class="navbar navbar-expand-lg navbar-light navbar-beige">
-  <div class="container-fluid">
-    <a class="navbar-brand fw-bold" href="#">Artesano Curiti</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-      <span class="navbar-toggler-icon"></span>
-    </button>
 
-    <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
-      <ul class="navbar-nav me-3">
-        <li class="nav-item"><a class="nav-link active" href="index.html">Inicio</a></li>
-        <li class="nav-item"><a class="nav-link" href="catalogo.html">Catálogo</a></li>
-      </ul>
-
-      <!-- Ícono de carrito -->
-      <a href="carrito.html" target="_blank" class="btn position-relative">
-        <i class="bi bi-cart3 fs-4 text-dark"></i>
-      </a>
-    </div>
-  </div>
-</nav>
-
-  <div class="container my-5">
+  <div class="wrapper container my-5">
     <h2 class="text-center mb-4">Tu Carrito</h2>
     <div id="carrito-lista" class="row justify-content-center"></div>
 
@@ -40,6 +20,15 @@
       </button>
     </div>
   </div>
+
+  <footer class="footer">
+    <p>© 2025 Hecho con amor | Curití Santander, Colombia</p>
+    <div class="social-icons">
+      <a href="#"><i class="bi bi-instagram"></i></a>
+      <a href="#"><i class="bi bi-tiktok"></i></a>
+      <a href="#"><i class="bi bi-whatsapp"></i></a>
+    </div>
+  </footer>
 
   <script>
     function mostrarCarrito() {
@@ -94,19 +83,12 @@
 
       mensaje += `\nTotal: $${total.toLocaleString()}\nGracias por apoyar el arte colombiano 🇨🇴`;
 
-      const url = `https://wa.me/5731429081122?text=${encodeURIComponent(mensaje)}`;
+      const url = `https://wa.me/573142908122?text=${encodeURIComponent(mensaje)}`;
       window.open(url, '_blank');
     }
 
     mostrarCarrito();
   </script>
-<footer class="footer-beige text-center p-3">
-  <p>&copy; 2025 Hecho con amor | Curití Santander, Colombia</p>
-  <div>
-    <a href="#" class="text-dark me-3"><i class="bi bi-tiktok fs-5"></i></a>
-    <a href="#" class="text-dark me-3"><i class="bi bi-instagram fs-5"></i></a>
-    <a href="#" class="text-dark"><i class="bi bi-whatsapp fs-5"></i></a>
-  </div>
-</footer>
+
 </body>
 </html>
