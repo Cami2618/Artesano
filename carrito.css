@@ -8,6 +8,20 @@ html, body {
   color: #4e3b2c;
   font-family: 'Segoe UI', sans-serif;
 }
+.navbar-beige {
+  background-color: #f5f0e6;
+  color: #5c4a3d;
+}
+.navbar-beige .navbar-brand,
+.navbar-beige .nav-link {
+  color: #5c4a3d !important; /* café */
+  font-weight: 500;
+}
+
+.navbar-beige .nav-link.active,
+.navbar-beige .nav-link:hover {
+  color: #3b2e26 !important; /* café más oscuro al pasar */
+}
 
 .wrapper {
   flex: 1;
