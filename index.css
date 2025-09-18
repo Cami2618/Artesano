@@ -156,63 +156,76 @@
     text-decoration: underline;
   }
   /* Beneficios Fique */
-  .text-success {
-  color: #5c4a3d; /* verde cálido */
-}
 
-.text-muted {
-  color: #7a7a7a; /* gris suave para subtítulos */
-}
-
-/* Tarjeta de contenido */
-.bg-white {
-  background-color: #ffffff;
-}
-
-.p-4 {
-  padding: 1.5rem;
-}
-
-.rounded {
-  border-radius: 0.5rem;
-}
-
-.shadow-sm {
-  box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
-}
-
-/* Lista de beneficios */
-ul.list-unstyled li {
-  font-size: 1rem;
-  line-height: 1.6;
-}
-
-ul.list-unstyled li strong {
-  color: #5c4a3d; /* gris azulado para destacar */
-}
-
-/* Espaciado general */
-.py-5 {
+/* Sección general */
+#beneficios-fique {
   padding-top: 3rem;
-  padding-bottom: 3rem;
+  padding-bottom: 2rem;
 }
 
-.mb-3 {
-  margin-bottom: 1rem;
+/* Títulos */
+#beneficios-fique h2 {
+  color: #5a4a3b;
+  font-weight: 600;
+  font-size: 2rem;
 }
 
-.mb-4 {
-  margin-bottom: 1.5rem;
+#beneficios-fique p.text-muted {
+  color: #5a4a3b;
+  font-size: 1.1rem;
 }
 
-.mt-4 {
-  margin-top: 1.5rem;
+/* Tarjetas giratorias */
+.tarjeta-beneficio {
+  width: 100%;
+  height: 150px;
+  perspective: 1000px;
 }
 
+.tarjeta-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.8s ease;
+  transform-style: preserve-3d;
+}
+
+.tarjeta-beneficio:hover .tarjeta-inner {
+  transform: rotateY(180deg);
+}
+
+.tarjeta-front,
+.tarjeta-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border: 2px solid #c8a98b;
+  border-radius: 10px;
+  padding: 1rem;
+  box-shadow: 0 0.125rem 0.25rem rgba(0,0,0,0.1);
+  background-color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: 'Segoe UI', sans-serif;
+  color: #5a4a3b;
+}
+
+.tarjeta-front {
+  font-weight: bold;
+  font-size: 1.1rem;
+}
+
+.tarjeta-back {
+  transform: rotateY(180deg);
+  font-size: 0.95rem;
+}
 
   /* Mapa */
 .bg-cafe {
-    background-color: #f5e9dc; /* tono café claro */
+    background-color: #f5f0e6; /* tono café claro */
   }
   #local {
     scroll-margin-top: 80px; /* útil si usas navegación anclada */
