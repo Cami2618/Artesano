@@ -156,6 +156,26 @@
     text-decoration: underline;
   }
   /* Beneficios Fique */
+/* Ajuste responsivo para tarjetas en móvil */
+@media (max-width: 576px) {
+  .tarjeta-beneficio {
+    height: auto;
+  }
+
+  .tarjeta-front,
+  .tarjeta-back {
+    padding: 1rem;
+    font-size: 0.95rem;
+  }
+
+  .tarjeta-front h4 {
+    font-size: 1rem;
+  }
+
+  .tarjeta-back p {
+    font-size: 0.9rem;
+  }
+}
 
 /* Sección general */
 #beneficios-fique {
