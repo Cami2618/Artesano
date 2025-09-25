@@ -52,35 +52,38 @@
 
   <script>
     function mostrarCarrito() {
-      const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
-      const contenedor = document.getElementById('carrito-lista');
+  const carrito = JSON.parse(localStorage.getItem('carrito')) || [];
+  const contenedor = document.getElementById('carrito-lista');
 
-      if (!contenedor) return;
+  if (!contenedor) return;
 
-      if (carrito.length === 0) {
-        contenedor.innerHTML = '<p class="text-center">Tu carrito está vacío.</p>';
-        return;
-      }
+  if (carrito.length === 0) {
+    contenedor.innerHTML = '<p class="text-center">Tu carrito está vacío.</p>';
+    return;
+  }
 
-      carrito.forEach((item, index) => {
-        const card = document.createElement('div');
-        card.className = 'col-md-3 col-sm-6 mb-4';
-        card.innerHTML = `
-          <div class="card cart-item position-relative">
-            <button class="btn btn-eliminar position-absolute top-0 end-0 m-2" onclick="eliminarProducto(${index})">
-              <i class="bi bi-x-lg"></i>
-            </button>
-            <img src="${item.img}" class="card-img-top cart-img" alt="${item.nombre}">
-            <div class="card-body">
-              <h5 class="card-title">${item.nombre}</h5>
-              <p class="card-text">Talla: ${item.talla}</p>
-              <p class="card-text">Precio: $${item.precio.toLocaleString()}</p>
-            </div>
-          </div>
-        `;
-        contenedor.appendChild(card);
-      });
-    }
+  carrito.forEach((item, index) => {
+    const card = document.createElement('div');
+    card.className = 'col-md-3 col-sm-6 mb-4';
+    card.innerHTML = `
+      <div class="card cart-item position-relative">
+        <button class="btn btn-eliminar position-absolute top-0 end-0 m-2" onclick="eliminarProducto(${index})">
+          <i class="bi bi-x-lg"></i>
+        </button>
+        <img src="${item.img}" class="card-img-top cart-img" alt="${item.nombre}">
+        <div class="card-body">
+          <h5 class="card-title">${item.nombre}</h5>
+          <p class="card-text">Talla: ${item.talla}</p>
+          <p class="card-text">Cantidad: ${item.cantidad}</p>
+          <p class="card-text">Precio unitario: $${item.precio.toLocaleString()}</p>
+          <p class="card-text fw-bold">Subtotal: $${(item.precio * item.cantidad).toLocaleString()}</p>
+        </div>
+      </div>
+    `;
+    contenedor.appendChild(card);
+  });
+}
+
 
     function eliminarProducto(index) {
       let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
@@ -97,11 +100,12 @@
       let total = 0;
 
       carrito.forEach(item => {
-        mensaje += `• ${item.nombre} - Talla ${item.talla} - $${item.precio.toLocaleString()}\n`;
-        total += item.precio;
+        mensaje += `• ${item.nombre} - Talla ${item.talla} - Cantidad: ${item.cantidad} - $${(item.precio * item.cantidad).toLocaleString()}\n`;
+        total += item.precio * item.cantidad;
+
       });
 
-      mensaje += `\nTotal: $${total.toLocaleString()}\nGracias por realizar tu compra con Artesano! `;
+      mensaje += `\nTotal: $${total.toLocaleString()}\nQuedo pendiente de su respuesta. ¡Gracias!`;
 
       const url = `https://wa.me/573142908122?text=${encodeURIComponent(mensaje)}`;
       window.open(url, '_blank');

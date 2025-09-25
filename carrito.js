@@ -7,18 +7,38 @@ document.addEventListener('DOMContentLoaded', () => {
       const precio = parseInt(this.getAttribute('data-precio'));
       const img = this.getAttribute('data-img');
 
-      // Buscar el selector de talla dentro del mismo card
       const card = this.closest('.card');
+
+      // Detectar talla si existe
       const tallaSelector = card.querySelector('.talla-selector');
-      const talla = tallaSelector ? tallaSelector.value : 'Única';
+      const talla = tallaSelector ? tallaSelector.value : null;
 
-      const producto = { nombre, precio, talla, img };
+      // Validar si el producto requiere talla
+      if (tallaSelector && !talla) {
+        alert('Por favor selecciona una talla antes de añadir al carrito.');
+        return;
+      }
 
+      // Detectar cantidad si existe
+      const cantidadInput = card.querySelector('.cantidad-input');
+      const cantidad = cantidadInput ? parseInt(cantidadInput.value) || 1 : 1;
+
+      // Crear objeto producto
+      const producto = {
+        nombre,
+        precio,
+        img,
+        talla: talla || 'Única',
+        cantidad
+      };
+
+      // Guardar en localStorage
       let carrito = JSON.parse(localStorage.getItem('carrito')) || [];
       carrito.push(producto);
       localStorage.setItem('carrito', JSON.stringify(carrito));
 
-      alert(`🛒 Añadido al carrito:\n${nombre} - Talla ${talla}`);
+      // Mostrar confirmación
+      alert(`🛒 Añadido al carrito:\n${nombre}\nTalla: ${producto.talla}\nCantidad: ${producto.cantidad}`);
     });
   });
 });
